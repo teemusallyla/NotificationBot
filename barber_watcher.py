@@ -74,7 +74,7 @@ class BarberWatcher:
         }
 
         for i in range(weeks_to_look_for):
-            payload["weekStart"] = (today + 3*dt).isoformat()
+            payload["weekStart"] = (today + i*dt).isoformat()
             resp = requests.post(self.api_url, data=json.dumps(payload), headers=headers)
             events = resp.json()
             for event in events:
@@ -92,7 +92,7 @@ class BarberWatcher:
         return resp
 
     def watch_barber_times(self):
-        wait_time = 5 * 60
+        wait_time = 30 * 60
         print("Watching...")
 
         while True:
