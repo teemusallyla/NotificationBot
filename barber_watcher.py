@@ -89,8 +89,6 @@ class BarberWatcher:
                         
                         
 
-        print(resp.text)
-
         return resp
 
     def watch_barber_times():
