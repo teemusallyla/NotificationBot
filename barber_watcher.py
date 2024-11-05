@@ -91,8 +91,9 @@ class BarberWatcher:
 
         return resp
 
-    def watch_barber_times():
+    def watch_barber_times(self):
         wait_time = 5 * 60
+        print("Watching...")
 
         while True:
             self.get_barber_times()
